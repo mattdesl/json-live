@@ -5,20 +5,18 @@ require('bole').output({
 })
 
 var create = require('./lib/server')
-var argv = require('minimist')(process.argv.slice(2))
 var log = require('bole')('json-live')
 
-argv.port = parseInt(process.env.JSON_LIVE_PORT || 12875)
+var port = parseInt(process.env.JSON_LIVE_PORT || 12875)
 
-var server = create(argv).listen(argv.port, function(err) {
+var server = create().listen(port, function(err) {
   if (err) {
     console.error("Error connecting to server:", err)
     process.exit(1)
   }
-  log.info('Server running on http://localhost:' + argv.port + '/')
-
-  //catch Ctrl + C to close server
+  log.info('Server running on http://localhost:' + port + '/')
+  
+  //catch Ctrl + C to close sse server
   var close = server.close.bind(server)
-  process.on('exit', close)
   process.on('SIGINT', close)
 })

@@ -16,34 +16,24 @@
     "esprima": "^2.0.0",
     "events": "^1.0.2",
     "extend": "^2.0.0",
-    "inherits": "^2.0.1",
-    "minimist": "^1.1.0",
     "querystring": "^0.2.0",
     "replace-method": "0.0.0",
     "request": "^2.53.0",
-    "safe-json-parse": "^4.0.0",
-    "sleuth": "^0.1.1",
     "sse-stream": "0.0.4",
-    "static-eval": "^0.2.3",
     "through": "^2.3.6",
-    "uuid": "^2.0.1",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
     "browserify": "^9.0.3",
-    "budo": "^1.0.2",
     "canvas-testbed": "^1.0.3",
     "garnish": "^2.1.0",
     "tape": "^3.5.0",
-    "watchify": "^2.4.0",
     "wzrd": "^1.2.1"
   },
   "scripts": {
     "test": "node test/test-client.js",
     "server": "node ./cli.js | garnish -v",
-    "browser": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v",
-    "budo": "budo example/index.js -t ./lib/transform.js --live | garnish -v",
-    "start": "npm run server | npm run browser"
+    "start": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v"
   },
   "keywords": [
     "hot",

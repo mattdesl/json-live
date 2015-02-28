@@ -1,6 +1,5 @@
 var test = require('tape')
-var client = require('../client')
-var sse = require('sse-stream')
+var client = require('../lib/client')
 var obj = JSON.stringify({ foo: 'bar', test: 25 })
 
 test('should cache as if require()', function(t) {
