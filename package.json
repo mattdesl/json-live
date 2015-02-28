@@ -1,6 +1,6 @@
 {
   "name": "json-live",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "hot reloads JSON files without losing app state",
   "main": "./lib/transform.js",
   "browser": "./browser.js",
