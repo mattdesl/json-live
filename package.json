@@ -5,6 +5,9 @@
   "main": "./lib/transform.js",
   "browser": "./browser.js",
   "license": "MIT",
+  "bin": {
+    "json-live": "./cli.js"  
+  },
   "author": {
     "name": "Matt DesLauriers",
     "email": "dave.des@gmail.com",
