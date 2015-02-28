@@ -15,8 +15,11 @@ var server = create().listen(port, function(err) {
     process.exit(1)
   }
   log.info('Server running on http://localhost:' + port + '/')
-  
+
   //catch Ctrl + C to close sse server
   var close = server.close.bind(server)
-  process.on('SIGINT', close)
+  server.once('close', function() {
+    process.removeListener('SIGINT', close)
+  })
+  process.once('SIGINT', close)
 })
