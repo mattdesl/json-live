@@ -1,0 +1,9 @@
+{
+  "test": {
+    "prop": 3
+  },
+  "text": "blah",
+  "style": {
+    "background": "blue"
+  }
+}

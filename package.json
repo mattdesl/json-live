@@ -2,7 +2,8 @@
   "name": "json-live",
   "version": "0.1.0",
   "description": "hot reloads JSON files without losing app state",
-  "main": "index.js",
+  "main": "./lib/transform.js",
+  "browser": "./browser.js",
   "license": "MIT",
   "author": {
     "name": "Matt DesLauriers",
@@ -10,11 +11,13 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
+    "bole": "^2.0.0",
     "chokidar": "^1.0.0-rc3",
     "esprima": "^2.0.0",
     "events": "^1.0.2",
     "extend": "^2.0.0",
     "inherits": "^2.0.1",
+    "minimist": "^1.1.0",
     "querystring": "^0.2.0",
     "replace-method": "0.0.0",
     "request": "^2.53.0",
@@ -30,16 +33,17 @@
     "browserify": "^9.0.3",
     "budo": "^1.0.2",
     "canvas-testbed": "^1.0.3",
+    "garnish": "^2.1.0",
     "tape": "^3.5.0",
     "watchify": "^2.4.0",
     "wzrd": "^1.2.1"
   },
   "scripts": {
-    "test": "node test.js",
-    "live": "node ./server.js",
-    "start": "wzrd canvas-example.js -- -t ./transform.js",
-    "plain": "wzrd canvas-example.js",
-    "budo": "budo canvas-example.js -t ./transform.js --live"
+    "test": "node test/test-client.js",
+    "server": "node ./cli.js | garnish -v",
+    "browser": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v",
+    "budo": "budo example/index.js -t ./lib/transform.js --live | garnish -v",
+    "start": "npm run server | npm run browser"
   },
   "keywords": [
     "hot",
