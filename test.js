@@ -1,0 +1,1 @@
+var hotJSON = require('jsonify')
