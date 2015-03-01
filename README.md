@@ -25,7 +25,9 @@ With `json-live` running, changing the `model.json` file will update the values 
 }
 ```
 
-#### Usage
+Comments/suggestions/PRs/etc welcome.
+
+## Usage
 
 [![NPM](https://nodei.co/npm/json-live.png)](https://www.npmjs.com/package/json-live)
 
@@ -58,6 +60,19 @@ For example, with [wzrd](https://github.com/maxogden/wzrd) your local scripts mi
 Now, in one process you would `npm run server` to initiate the json-live server. In another process, `npm run live` to initiate the development server. Note the `build` script doesn't include the transform, since it is not needed for production.
 
 You can open `localhost:9966` to see the resulting bundle, and start making changes to JSON files to see them updated during runtime.
+
+## Event Emitter
+
+The default browser export for this module returns an event emitter which sends `update` events when the JSON changes. It sends the parameters `(object, id)`, where `object` is the JSON data that has been updated, and `id` is a path to that JSON file.
+
+```js
+var data = require('./foo.json')
+
+var live = require('json-live')
+live.on('update', function(object) {
+    console.log(object === data) // should be true  
+})
+```
 
 ## License
 
