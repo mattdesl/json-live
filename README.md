@@ -4,7 +4,7 @@
 
 [(demo)](https://www.youtube.com/watch?v=ylV7aqswHYg&feature=youtu.be)
 
-Live-update JSON objects on file change, without destroying application state. This is ideal for animations and rapid UI development. Thanks to @hughsk and [glslify-live](https://github.com/hughsk/glslify-live) which was the groundwork for most of the code here.
+Live-update JSON objects on file change, without destroying application state. This is ideal for animations and rapid UI development. 
 
 This comes in the form of a server and browserify transform, but requires no frontend code changes. Example:
 
@@ -25,7 +25,7 @@ With `json-live` running, changing the `model.json` file will update the values 
 }
 ```
 
-Comments/suggestions/PRs/etc welcome.
+Comments/suggestions/PRs/etc welcome. Thanks to @hughsk and [glslify-live](https://github.com/hughsk/glslify-live) which set the groundwork for most of the code here.
 
 ## Usage
 
@@ -50,10 +50,12 @@ However, the preferred solution is to add a command to your `package.json` scrip
 For example, with [wzrd](https://github.com/maxogden/wzrd) your local scripts might look like this. You can optionally use [garnish](https://github.com/mattdesl/garnish) for pretty-printing in the terminal.
 
 ```json
-"scripts": {
-    "server": "json-live | garnish",
-    "live": "wzrd index.js:bundle.js -- -t json-live | garnish",
-    "build": "browserify index.js | uglifyjs -cm > bundle.js"
+{
+    "scripts": {
+        "server": "json-live | garnish",
+        "live": "wzrd index.js:bundle.js -- -t json-live | garnish",
+        "build": "browserify index.js | uglifyjs -cm > bundle.js"
+    }
 }
 ```
 
