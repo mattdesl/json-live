@@ -37,19 +37,19 @@ First, install the tool locally:
 npm install json-live --save-dev
 ```
 
-Include `-t json-live` as a transform argument to Browserify.
-
-```sh
-browserify index.js -t json-live > bundle.js
-```
-
-You also need to run the `json-live` server. You can run it directly from shell, like so:  
+You first need to run the `json-live` server. You can run it directly from shell, like so:  
 
 ```sh
 ./node_modules/.bin/json-live 
 ```
 
 However, the preferred solution is to run the server with a `package.json` scripts field.
+
+Then, include `-t json-live` as a transform argument when bundling.
+
+```sh
+browserify index.js -t json-live > bundle.js
+```
 
 For example, with [wzrd](https://github.com/maxogden/wzrd) your local scripts might look like this. You can optionally use [garnish](https://github.com/mattdesl/garnish) for pretty-printing in the terminal.
 
