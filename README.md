@@ -37,15 +37,19 @@ First, install the tool locally:
 npm install json-live --save-dev
 ```
 
-Include `--transform json-live` as an argument to Browserify.
+Include `-t json-live` as a transform argument to Browserify.
 
-Now you need to run the server. You can run it directly from shell, like so:  
+```sh
+browserify index.js -t json-live > bundle.js
+```
+
+You also need to run the `json-live` server. You can run it directly from shell, like so:  
 
 ```sh
 ./node_modules/.bin/json-live 
 ```
 
-However, the preferred solution is to add a command to your `package.json` scripts field.
+However, the preferred solution is to run the server with a `package.json` scripts field.
 
 For example, with [wzrd](https://github.com/maxogden/wzrd) your local scripts might look like this. You can optionally use [garnish](https://github.com/mattdesl/garnish) for pretty-printing in the terminal.
 
@@ -75,6 +79,8 @@ live.on('update', function(object) {
     console.log(object === data) // should be true  
 })
 ```
+
+Without the transform included, the event emitter will simply not emit anything.
 
 ## License
 
