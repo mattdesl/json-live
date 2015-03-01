@@ -4,7 +4,7 @@
 
 [(demo)](https://www.youtube.com/watch?v=ylV7aqswHYg&feature=youtu.be)
 
-Live-update JSON objects on file change, without destroying application state. This is ideal for animations and rapid UI development.
+Live-update JSON objects on file change, without destroying application state. This is ideal for animations and rapid UI development. Thanks to @hughsk and [glslify-live](https://github.com/hughsk/glslify-live) which was the groundwork for most of the code here.
 
 This comes in the form of a server and browserify transform, but requires no frontend code changes. Example:
 
