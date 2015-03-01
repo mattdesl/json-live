@@ -18,8 +18,5 @@ var server = create().listen(port, function(err) {
 
   //catch Ctrl + C to close sse server
   var close = server.close.bind(server)
-  server.once('close', function() {
-    process.removeListener('SIGINT', close)
-  })
   process.once('SIGINT', close)
 })
