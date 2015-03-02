@@ -1,6 +1,6 @@
 {
   "name": "json-live",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "hot reloads JSON files without losing app state",
   "main": "./lib/transform.js",
   "browser": "./browser.js",
@@ -28,15 +28,18 @@
   },
   "devDependencies": {
     "browserify": "^9.0.3",
+    "budo": "^1.1.0",
     "canvas-testbed": "^1.0.3",
     "garnish": "^2.1.0",
     "tape": "^3.5.0",
+    "watchify": "^2.4.0",
     "wzrd": "^1.2.1"
   },
   "scripts": {
     "test": "node test/test-client.js",
     "server": "node ./cli.js | garnish -v",
-    "start": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v"
+    "start": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v",
+    "watch": "budo example/index.js -t ./lib/transform --verbose | garnish"
   },
   "keywords": [
     "hot",

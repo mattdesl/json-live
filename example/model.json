@@ -2,8 +2,8 @@
   "test": {
     "prop": 3
   },
-  "text": "blah",
+  "text": "text",
   "style": {
-    "background": "blue"
+    "background": "green"
   }
 }
