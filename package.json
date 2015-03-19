@@ -37,7 +37,7 @@
   },
   "scripts": {
     "test": "node test/test-client.js",
-    "server": "node ./cli.js | garnish -v",
+    "live": "node ./cli.js | garnish -v",
     "start": "wzrd example/index.js -- -t ./lib/transform.js | garnish -v",
     "watch": "budo example/index.js -t ./lib/transform --verbose | garnish"
   },

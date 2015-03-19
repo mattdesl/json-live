@@ -56,14 +56,14 @@ For example, with [wzrd](https://github.com/maxogden/wzrd) your local scripts mi
 ```json
 {
     "scripts": {
-        "server": "json-live | garnish",
+        "live": "json-live | garnish",
         "start": "wzrd index.js:bundle.js -- -t json-live | garnish",
         "build": "browserify index.js | uglifyjs -cm > bundle.js"
     }
 }
 ```
 
-Now, first you would `npm run server` to initiate the json-live server. Then in another process, `npm run start` for the development server. Note the `build` script doesn't include the transform, since it is not needed for production.
+Now, first you would `npm run live` to initiate the json-live server. Then in another process, `npm run start` for the development server. Note the `build` script doesn't include the transform, since it is not needed for production.
 
 You can open `localhost:9966` to see the resulting bundle, and start making changes to JSON files to see them updated during runtime.
 
